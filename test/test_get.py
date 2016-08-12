@@ -16,154 +16,154 @@ class TestGetMethods(unittest.TestCase):
     #     post_status("Tweet " + self.query)
 
     # Test if tweets can be retrieved by searching a string
-    # def test_search_hashtag(self):
-    #     # print "A INTRAAAAT"
-    #     found = False
-    #     t = tmr()
-    #
-    #     # self.query = unicode(create_random_id(self))
-    #     self.query = create_random_id(self)
-    #     self.query = self.query.encode('utf8')
-    #     post_status("Tweet " + self.query)
-    #
-    #     while t.timer():
-    #         for status in search_status(self.query):
-    #             if self.query in status.text:
-    #                 found = True
-    #                 break
-    #         if found:
-    #             break
-    #     self.assertTrue(found,"Not found")
-    #
-    #
-    # # #TODO: get past the twitter api call limitations that can make the test pass since the search won't return anything
-    # # #TODO: there might be the same issue that the test fails since status.lang returns en instead of fr
-    # # # Test if tweets can be retrieved  in a specific language
-    # def test_search_locale(self):
-    #     lang_en = "en"  #default user language
-    #     lang_fr = "fr"
-    #     found = False
-    #     t = tmr()
-    #     # print "\n1. language to update:", lang_fr
-    #     #update user to use French language
-    #     update_language(lang_fr)
-    #
-    #     #post in new language
-    #     self.query = "Test search locale " + unicode(create_random_id(self))
-    #     tweet = post_status(self.query)
-    #
-    #     #search in other language than it was previous posted, e.g. in english
-    #     while t.timer():
-    #         for status in search_status(self.query, locale=lang_en):
-    #             # print "st:", status.text
-    #             # print "sq:",self.query
-    #             # print "\nStatus Lang: ", status.lang
-    #             # print "\nStatus id: ", status.id
-    #             # print "\nStatus text: ", status.text
-    #             # print "\nQuery: ", self.query
-    #             # print "status type", type(status)
-    #
-    #             # if self.query in status.text:
-    #             if self.query in status.text and status.lang==lang_en:
-    #                 # print "here", status.lang
-    #                 # print "status text", status.text
-    #                 found = True
-    #                 break
-    #         if found:
-    #             break
-    #
-    #     update_language(lang_en)
-    #     # found needs to be False
-    #     # print found
-    #     self.assertFalse(found,"Locale search failed, tweed supposed not to be found!")
-    #
-    #
-    # # #TODO: need some way to retreive the correct status language.
-    # def test_search_hashtag_lang_en(self):
-    #     # query = "#genderbarriers"
-    #     lang_en = "en"
-    #     lang_fr = "fr"
-    #     found = False
-    #     t = tmr()
-    #     # print "1. language to update:", lang_fr
-    #
-    #     update_language(lang_fr)
-    #
-    #     self.query = "Tweet " + unicode(create_random_id(self))
-    #     tweet = post_status(self.query)
-    #
-    #     # print "2. language of the tweet: ", tweet.lang
-    #
-    #     while t.timer():
-    #         for status in search_status(self.query):
-    #             # print "st:", status.text
-    #             # print "sq:",self.query
-    #             # print "\nStatus Lang: ", status.lang
-    #             # print "\nStatus id: ", status.id
-    #             # print "\nStatus text: ", status.text
-    #             # print "\nQuery: ", self.query
-    #             # print "status type", type(status)
-    #
-    #             if self.query in status.text and lang_fr==status.lang:
-    #             # if self.query in status.text:
-    #             #     print "here"
-    #                 found = True
-    #                 break
-    #         if found:
-    #             # "print not here"
-    #             break
-    #     # update_language(lang_en)
-    #     # print "language back: ", tweet.lang
-    #
-    #     # print "THE FOUND". found
-    #     self.assertTrue(found,"Not Found")
-    #
-    #
-    # #TODO: retest this
-    # #NOTE: Count = formerly rpp in old Search API
-    # def test_search_count(self):
-    #     #need a common string to search for
-    #     random_id = create_random_id(self)
-    #     # print type(random_id)
-    #
-    #     found = False
-    #     tweet = []
-    #     tweets_no = random.randrange(1, 6)
-    #     # print "\ntweets no: ", tweets_no
-    #     t = tmr()
-    #
-    #     #create a random no of tweets to "count" for
-    #     for i in range(tweets_no):
-    #         # print "i", i
-    #         tweet.append(post_status(unicode("Test count "+ random_id + " " + str(time.time()))))
-    #     #searching for the common string and counting the no of tweets
-    #     while t.timer():
-    #         l = len(search_status(random_id, count = tweets_no))
-    #         if l:
-    #         # if len(search_status(random_id, count = tweets_no)):
-    #             found = True
-    #             break
-    #         if found:
-    #             break
-    #
-    #     self.assertTrue(found,"Not found")
+    def test_search_hashtag(self):
+        # print "A INTRAAAAT"
+        found = False
+        t = tmr()
+    
+        # self.query = unicode(create_random_id(self))
+        self.query = create_random_id(self)
+        self.query = self.query.encode('utf8')
+        post_status("Tweet " + self.query)
+    
+        while t.timer():
+            for status in search_status(self.query):
+                if self.query in status.text:
+                    found = True
+                    break
+            if found:
+                break
+        self.assertTrue(found,"Not found")
+    
+    
+    # #TODO: get past the twitter api call limitations that can make the test pass since the search won't return anything
+    # #TODO: there might be the same issue that the test fails since status.lang returns en instead of fr
+    # # Test if tweets can be retrieved  in a specific language
+    def test_search_locale(self):
+        lang_en = "en"  #default user language
+        lang_fr = "fr"
+        found = False
+        t = tmr()
+        # print "\n1. language to update:", lang_fr
+        #update user to use French language
+        update_language(lang_fr)
+    
+        #post in new language
+        self.query = "Test search locale " + unicode(create_random_id(self))
+        tweet = post_status(self.query)
+    
+        #search in other language than it was previous posted, e.g. in english
+        while t.timer():
+            for status in search_status(self.query, locale=lang_en):
+                # print "st:", status.text
+                # print "sq:",self.query
+                # print "\nStatus Lang: ", status.lang
+                # print "\nStatus id: ", status.id
+                # print "\nStatus text: ", status.text
+                # print "\nQuery: ", self.query
+                # print "status type", type(status)
+    
+                # if self.query in status.text:
+                if self.query in status.text and status.lang==lang_en:
+                    # print "here", status.lang
+                    # print "status text", status.text
+                    found = True
+                    break
+            if found:
+                break
+    
+        update_language(lang_en)
+        # found needs to be False
+        # print found
+        self.assertFalse(found,"Locale search failed, tweed supposed not to be found!")
+    
+    
+    # #TODO: need some way to retreive the correct status language.
+    def test_search_hashtag_lang_en(self):
+        # query = "#genderbarriers"
+        lang_en = "en"
+        lang_fr = "fr"
+        found = False
+        t = tmr()
+        # print "1. language to update:", lang_fr
+    
+        update_language(lang_fr)
+    
+        self.query = "Tweet " + unicode(create_random_id(self))
+        tweet = post_status(self.query)
+    
+        # print "2. language of the tweet: ", tweet.lang
+    
+        while t.timer():
+            for status in search_status(self.query):
+                # print "st:", status.text
+                # print "sq:",self.query
+                # print "\nStatus Lang: ", status.lang
+                # print "\nStatus id: ", status.id
+                # print "\nStatus text: ", status.text
+                # print "\nQuery: ", self.query
+                # print "status type", type(status)
+    
+                if self.query in status.text and lang_fr==status.lang:
+                # if self.query in status.text:
+                #     print "here"
+                    found = True
+                    break
+            if found:
+                # "print not here"
+                break
+        # update_language(lang_en)
+        # print "language back: ", tweet.lang
+    
+        # print "THE FOUND". found
+        self.assertTrue(found,"Not Found")
+    
+    
+    #TODO: retest this
+    #NOTE: Count = formerly rpp in old Search API
+    def test_search_count(self):
+        #need a common string to search for
+        random_id = create_random_id(self)
+        # print type(random_id)
+    
+        found = False
+        tweet = []
+        tweets_no = random.randrange(1, 6)
+        # print "\ntweets no: ", tweets_no
+        t = tmr()
+    
+        #create a random no of tweets to "count" for
+        for i in range(tweets_no):
+            # print "i", i
+            tweet.append(post_status(unicode("Test count "+ random_id + " " + str(time.time()))))
+        #searching for the common string and counting the no of tweets
+        while t.timer():
+            l = len(search_status(random_id, count = tweets_no))
+            if l:
+            # if len(search_status(random_id, count = tweets_no)):
+                found = True
+                break
+            if found:
+                break
+    
+        self.assertTrue(found,"Not found")
 
 
     # TODO: test if the number of tweets to return per page can work with 100 which is the maximum according to the API
-    # def test_search_count_100(self):
-    #     pass
+    def test_search_count_100(self):
+        pass
 
     # TODO:  test if the number of tweets to return per page don't work with 100 which is the maximum according to the API
-    # def test_search_count_over100(self):
-    #     pass
+    def test_search_count_over100(self):
+        pass
 
     # TODO: test if can return 0 tweets when searching
     # TODO: consult the api works with 0 set as count
-    # def test_search_count_0(self):
-    #     pass
+    def test_search_count_0(self):
+        pass
 
-    # #TODO: for some reason it doesn't retreive any tweets
-    # Test search until some date.
+    #TODO: for some reason it doesn't retreive any tweets
+    #est search until some date.
     def test_search_until(self):
         t = tmr()
         random_id = create_random_id(self)
