@@ -25,16 +25,4 @@ def search_status(query, lang=None, locale=None, count=None, until=None, items=N
     print response_list
     return response_list
 
-def get_status_by_idd(idd):
-    # status = api.user_timeline(id=id)
-    for status in api.user_timeline():
-        if status.id == idd:
-            print status.text
-            print status.id
-            print status.lang
-            print status
-
-
-# get_status_by_idd(763333508303499264)
-
 # search_status("Test", 763391457952567296)
