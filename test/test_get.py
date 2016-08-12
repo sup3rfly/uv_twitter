@@ -15,7 +15,7 @@ class TestGetMethods(unittest.TestCase):
     #     self.query = unicode(self.create_random_id())
     #     post_status("Tweet " + self.query)
 
-    Test if tweets can be retrieved by searching a string
+    # Test if tweets can be retrieved by searching a string
     def test_search_hashtag(self):
         # print "A INTRAAAAT"
         found = False
@@ -162,8 +162,8 @@ class TestGetMethods(unittest.TestCase):
     def test_search_count_0(self):
         pass
 
-    # #TODO: for some reason it doesn't retreive any tweets
-    # Test search until some date.
+    #TODO: for some reason it doesn't retreive any tweets
+    #est search until some date.
     def test_search_until(self):
         t = tmr()
         random_id = create_random_id(self)
