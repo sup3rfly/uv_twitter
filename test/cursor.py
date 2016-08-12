@@ -7,19 +7,6 @@ csecret = '27VEuF4qErAGCishfleG5zLvBJ1AAmJ3IoVdYJ75xQQxxga9UG'
 atoken = '3575504721-dIpxGbqa4crzDWhwKo16dV56L4lyYHHgi0qczhx'
 asecret = 'IzalISFtV5JLLz7XszaFz8ajUPPZhaGMIoG86aTAuIjEC'
 
-#@test_uv Authentication
-# ckey = 'S3W51f9vpvWK2gRoLG9w9fz1l'
-# csecret = 'vgJHFsxvy3t7mID2L4ZGL7dhymu1qvPnkycNFaQT7nnR9GR1vo'
-# atoken = '760375819655151616-CNp2ujYnjZMBp5RalaM5ZzPexU6DEy3'
-# asecret = 'CuK407eQiGxVJAyKqed5G9msEu0USsliVIaGYzTNekaYO'
-
-
-#crazyl3gs token receive
-# ckey = 'EcG2ogmD07Qus9NKweIqbhOlB'
-# csecret = 'hNSzioCFHbudHM9IK01zm9bvcQXVCwBNJ1V8zel4snFgPctgeV'
-# atoken = '24415614-LdZhU1T28K5GbZKS8k2pVusckZ3Aa1JEiTOeIVUdp'
-# asecret = '2XehmQi33fNoKHuu0p0JQhNUGbp9zN4tDYklWe7v7UHie'
-
 auth = tweepy.OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
 auth.secure = True
