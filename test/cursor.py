@@ -35,7 +35,7 @@ def search_status(query, lang=None, locale=None, count=None, until=None, items=N
         # print status.text.encode('utf-8')
         # print "Type:", status.text
         response_list.append(status)
-    print response_list
+#    print response_list
     return response_list
 
 def get_status_by_idd(idd):
