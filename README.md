@@ -10,6 +10,17 @@ You will need the following:
 * Docker installed with an active internet connection. [4]
 * An active internet connection
 
+
+Run instructions
+----------------
+The tests can be found under the "test" folder. To run the tests simply run:
+$ nosetests -s test_get.py
+$ nosetests -s test_post.py
+
+
+
+
+
 [1] - https://www.python.org/download/releases/2.7/
 [2] - http://tweepy.readthedocs.io/en/v3.5.0/
 [3] - https://nose.readthedocs.io/en/latest/
