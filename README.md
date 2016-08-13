@@ -18,9 +18,6 @@ $ nosetests -s test_get.py
 $ nosetests -s test_post.py
 
 
-
-
-
 [1] - https://www.python.org/download/releases/2.7/
 [2] - http://tweepy.readthedocs.io/en/v3.5.0/
 [3] - https://nose.readthedocs.io/en/latest/
