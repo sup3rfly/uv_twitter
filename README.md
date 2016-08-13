@@ -11,9 +11,6 @@ You will need the following:
 * An active internet connection
 
 [1] - https://www.python.org/download/releases/2.7/
-
 [2] - http://tweepy.readthedocs.io/en/v3.5.0/
-
 [3] - https://nose.readthedocs.io/en/latest/
-
 [4] - https://docs.docker.com/engine/installation/
