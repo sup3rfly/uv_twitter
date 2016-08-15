@@ -3,12 +3,21 @@ This file gives the details about using the uv_twitter project which aims to ver
 Setup instructions
 ------------------
 
+Manual setup
+------------
+
 You will need the following:
 * Python 2.7.x installed. [1]
 * Tweepy Python plugin installed. [2]
 * nose extension. [3]
-* Docker installed with an active internet connection. [4]
 * An active internet connection
+
+Automatic setup
+---------------
+To avoid the manual setup, the tests can be run also in a docker container. You can get a preconfigured docker container them by pulling the following from docker hub:
+$ docker pull alexgeorgescu/twittertest
+
+NOTE: Docker needs to be installed on the host machine.
 
 
 Run instructions
