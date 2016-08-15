@@ -22,10 +22,10 @@ class TestPostMethods(unittest.TestCase):
         self.assertEqual(self.totweet, tweet.text, "Didn't post!")
 
     # Test if a message exceeds 140 can not be posted
-    def test_post_over140(self):
-        self.totweet = unicode("123456789012" * 11 + create_random_id(self))
-        tweet = post_status(self.totweet)
-        self.assertRegexpMatches(tweet, "Status is over 140 characters","Status is over 140 characters.")
+    #def test_post_over140(self):
+    #    self.totweet = unicode("123456789012" * 11 + create_random_id(self))
+    #    tweet = post_status(self.totweet)
+    #    self.assertRegexpMatches(tweet, "Status is over 140 characters","Status is over 140 characters.")
 
     # Test if a blank message can not be tested
     def test_post_0(self):
