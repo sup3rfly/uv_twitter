@@ -1,10 +1,8 @@
-import time, datetime, string, random
-import tweepy
-from auth import *
-from tweepy import Stream
-from tweepy import OAuthHandler
-from tweepy.streaming import StreamListener
+import random
+import string
+import time
 
+from auth import *
 
 
 #function that creates a random id needed to have unique tweets
@@ -26,7 +24,7 @@ def update_language(language):
     time.sleep(10)
 
 
-
+# function that posts a status to twitter using the update_status from twitter api
 def post_status(status, in_reply_to_status_id=None, lat=None, long=None):
     # print "\nEntered post_status\nStatus to post:", status
     try:
@@ -40,8 +38,8 @@ def post_status(status, in_reply_to_status_id=None, lat=None, long=None):
         return e.reason
     return tweet
 
+# delete a twitter post
 def destroy(destroy_id):
-
     try:
         print "\nDestroying..."
         api.destroy_status(destroy_id)
@@ -62,14 +60,6 @@ def whoami(self):
 
 #Search someting
 # search_test('#Bucharest')
-
-
-# random_string = ''.join([random.choice(string.ascii_letters + string.digits) for n in xrange(32)])
-# # Tweet something
-# tweet = "@crazyl3gs " + random_string + " >>>" + datetime.datetime.now().time().isoformat()
-# print "The tweet: "
-# print tweet
-# post_status(tweet)
 
 # whoami(usertest)
 
