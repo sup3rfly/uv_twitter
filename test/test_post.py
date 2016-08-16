@@ -1,18 +1,13 @@
 import unittest
-import tweepy
-from IPython import embed
 
-from basepost import post_status, create_random_id, destroy, whoami
-from cursor import search_status
-# from timeout import tmr
-
+from basepost import post_status, create_random_id
 
 class TestPostMethods(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
         cls.location = [26.0963, 44.4396] #bucharest location
-        cls.usertest = '@test_uv'
+        cls.usertest = '@smth_banal'
 
 
     # Test if a simple message can be posted
@@ -22,6 +17,9 @@ class TestPostMethods(unittest.TestCase):
         self.assertEqual(self.totweet, tweet.text, "Didn't post!")
 
     # Test if a message exceeds 140 can not be posted
+    def test_post_over140(self):
+        pass
+
     #def test_post_over140(self):
     #    self.totweet = unicode("123456789012" * 11 + create_random_id(self))
     #    tweet = post_status(self.totweet)
@@ -53,8 +51,12 @@ class TestPostMethods(unittest.TestCase):
 
         self.assertEqual(tweet.id, tweet_reply.in_reply_to_status_id, "Didn't reply to the correct status id!")
 
+
     # #TODO: This still needs some work to be done
     # # Test for a non existent in_reply_to_status_id
+    def test_post_reply_non_existent(self):
+        pass
+
     # def test_post_reply_non_existent(self):
     #     random_id = create_random_id(self)
     #
